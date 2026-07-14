@@ -252,10 +252,25 @@ azure-ai-projects==2.0.0b4
 - `git ls-files`: list files Git is already tracking.
 - `git branch --show-current`: show the current local branch.
 - `git remote -v`: show which remote repo `fetch` and `push` use.
+- `git add file`: stage the current saved version of a file for the next commit.
+- `git diff --cached`: show exactly what is staged for the next commit.
 - `git commit`: save a snapshot locally on the current branch.
+- `git commit -m "message"`: commit staged changes using the quoted text as the commit message.
 - `git push`: send local commits to a remote repo such as GitHub.
 - A commit does not automatically create a pull request.
 - A pull request is created after pushing a branch and asking to merge it into another branch, often `main`.
+
+Git workflow:
+
+```text
+Working folder -> staging area -> commit -> push
+```
+
+- Working folder: where files are edited.
+- Staging area: the selected changes for the next commit.
+- Commit: a local saved snapshot of the staged changes.
+- Push: sends local commits to a remote repo.
+- If a file is edited after staging, run `git add file` again to stage the latest saved version.
 
 Short status examples:
 
@@ -328,6 +343,24 @@ Example `.env.example`:
 FOUNDRY_ENDPOINT=your_project_endpoint
 AGENT_NAME=your_agent_name
 ```
+
+Example local commit made during this repo setup:
+
+```powershell
+git commit -m "Ignore local environment files, add coaching notes and coaching agent files"
+```
+
+Result:
+
+```text
+[main c3999c7] Ignore local environment files, add coaching notes and coaching agent files
+12 files changed
+```
+
+- `main`: the branch the commit was created on.
+- `c3999c7`: the short commit ID.
+- The commit removed tracked lab `.env` files from Git, added ignore rules, and added local notes.
+- The `.env` files can still exist locally on disk while being ignored by Git.
 
 ## Paths In Python
 
