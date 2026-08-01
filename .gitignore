@@ -4,4 +4,4 @@ obj
 .venv/
 .env
 *.env
-
+*.mp3
