@@ -117,6 +117,19 @@ After explaining something, give me one small exercise that takes 2–5 minutes.
 
 Do not introduce lots of new concepts at once.
 
+## Coaching notes
+
+- Python file mode `"r"` reads text as characters. Use it for readable text files such as `.txt`, `.csv`, `.json`, `.md`, `.html`, `.py`, and `.xml`.
+- Python file mode `"rb"` reads raw bytes. Use it for binary files such as `.mp3`, `.mpeg`, `.png`, `.jpg`, `.pdf`, `.zip`, `.xls`, and `.xlsx`.
+- Python file mode `"w"` writes text and overwrites the file if it already exists. Use it for text output such as `.txt`, `.csv`, `.json`, and `.md`.
+- Python file mode `"wb"` writes raw bytes. Use it when saving binary output such as `.mp3`, `.wav`, `.png`, `.jpg`, `.pdf`, `.zip`, `.xls`, and `.xlsx`.
+- Python file mode `"a"` appends text to the end of an existing file instead of overwriting it.
+- A `with` block is used with resources that should be cleaned up after use, such as opened files or streaming API responses. It helps Python safely close or release the resource when the indented block finishes.
+- In `with ... as response:`, the `as response` part stores the opened resource in a variable so the indented code can use it.
+- An f-string starts with `f` before the quote and lets Python insert variable values inside `{}` placeholders, such as `f"Saved to {speech_file_path}"`.
+- The key question is not whether the file contains rich or structured data. The key question is whether the file content can sensibly be read as text.
+- Rule of thumb: if it opens cleanly in Notepad as readable text, use `"r"`; if it looks unreadable or must be uploaded exactly as file bytes, use `"rb"`.
+
 ## Safety rails
 
 Never make repo changes unless I clearly ask you to.
